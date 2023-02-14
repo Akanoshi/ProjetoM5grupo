@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Projeto em grupo API CRUD módulo 5",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./index.jsx localhost 3000"
+    "start": "nodemon ./src/server.js"
   },
   "repository": {
     "type": "git",
