@@ -7,6 +7,9 @@ import Produto from "./Models/produtos.js";
 app.set("port", process.env.PORT || 3000)
 
         // Rotas
+app.get('/', (req, res) => {
+        console.log("Rota Padrão acessada")
+});
 app.get('/produtos', async (req, res, next) => {
 
     await Produto.findAll()
