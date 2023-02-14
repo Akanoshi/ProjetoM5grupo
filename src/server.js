@@ -8,13 +8,7 @@ app.set("port", process.env.PORT || 3000)
 
         // Rotas
 app.get('/', (req, res) => {
-    .then(() => {
-            console.log("foi")
-    }).catch((err) => {
-        return res.status(400).json({
-            erro: err,
-            message: "falha na requisição"});
-    })
+    res.sendStatus(200)
 });
 app.get('/produtos', async (req, res, next) => {
 
