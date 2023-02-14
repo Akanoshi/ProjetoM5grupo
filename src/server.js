@@ -1,10 +1,12 @@
 import app from "./app.js";
 import User from "./Models/user.js";
 import Produto from "./Models/produtos.js";
-const port = 3000
 
 
 
+app.set("port", process.env.PORT || 3000)
+
+        // Rotas
 app.get('/produtos', async (req, res, next) => {
 
     await Produto.findAll()
@@ -19,8 +21,6 @@ app.get('/produtos', async (req, res, next) => {
 });
 
 app.post('/cadastrar', async (req, res, next) => {
-    console.log(req.body)
-
     await User.create(req.body)
     .then(()=> {
         return res.json({
@@ -34,8 +34,6 @@ app.post('/cadastrar', async (req, res, next) => {
 });
 
 app.post('/estocar', async (req, res, next) => {
-    console.log(req.body)
-
     await Produto.create(req.body)
     .then(()=> {
         return res.json({
@@ -57,7 +55,7 @@ app.delete('/', (req, res, next) => {
 });
 
 
-
-app.listen(port, () => {   
-    console.log(`Listening on port ${port}`)
+        // Servidor rodando em: 
+app.listen(app.get("port"), () => {   
+    console.log(`Listening on port ${app.get("port")}`)
 })
