@@ -10,10 +10,7 @@ app.get('/produtos', async (req, res, next) => {
     await Produto.findAll()
     .then((produtos) => {
         console.log(produtos)
-        return res.json({
-            erro: false,
-            message: "sucesso"
-        })
+        return res.json(produtos)
     }).catch((err) => {
         return res.status(400).json({
             erro: err,
@@ -34,8 +31,21 @@ app.post('/cadastrar', async (req, res, next) => {
             erro: err,
             message: "falha no cadastro"});
     })
+});
 
-    res.send('POST')
+app.post('/estocar', async (req, res, next) => {
+    console.log(req.body)
+
+    await Produto.create(req.body)
+    .then(()=> {
+        return res.json({
+            erro: false,
+            message: "sucesso"});
+    }).catch((err) => {
+        return res.status(400).json({
+            erro: err,
+            message: "falha no cadastro"});
+    })
 });
 
 app.put('/', (req, res, next) => {
