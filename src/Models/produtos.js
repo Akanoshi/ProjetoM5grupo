@@ -26,6 +26,7 @@ const Produto = db.define("produtos" , {
     }
 })
 
+Produto.sync()
 Produto.sync({alter: true})
 
 export default Produto;
