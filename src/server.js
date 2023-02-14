@@ -17,14 +17,14 @@ app.get('/produtos', async (req, res, next) => {
     }).catch((err) => {
         return res.status(400).json({
             erro: err,
-            message: "falha no cadastro"});
+            message: "falha na requisição"});
     })
 });
 
-app.post('/produtos', async (req, res, next) => {
+app.post('/cadastrar', async (req, res, next) => {
     console.log(req.body)
 
-    await Produto.create(req.body)
+    await User.create(req.body)
     .then(()=> {
         return res.json({
             erro: false,
