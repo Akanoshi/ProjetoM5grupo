@@ -26,6 +26,7 @@ const User = db.define("clientes" , {
     }
 })
 
+User.sync()
 User.sync({alter: true})
 
 export default User
