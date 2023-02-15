@@ -69,5 +69,5 @@ app.delete('/', (req, res, next) => {
 
         // Servidor rodando em: 
 app.listen(app.get("port"), () => {   
-    console.log(`Listening on port ${app.get("port")}`)
+    console.log(`Listening on port localhost:${app.get("port")}`)
 })
