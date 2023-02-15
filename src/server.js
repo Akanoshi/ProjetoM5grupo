@@ -6,12 +6,13 @@ import Produto from "./Models/produtos.js";
 
 app.set("port", process.env.PORT || 3000)
 
-            // Rotas 
-    // Rotas Get
+            // Rotas  :::::::::::
+    // Rotas Get :::::::::::::::::::::::::::
 
 app.get('/', (req, res) => {
     res.sendStatus(200)
 });
+
 app.get('/produtos', async (req, res, next) => {
 
     await Produto.findAll()
@@ -25,7 +26,18 @@ app.get('/produtos', async (req, res, next) => {
     })
 });
 
-    // Rotas Post
+app.get('/produto', async (req, res) => {
+    console.log('produto especifico')
+    
+    const prod = await Produto.findOne({ where: {nome: req.body.nome}})
+    .then((prod) => {
+        console.log('produto encontrado')
+        res.json(prod)
+    }).catch((err) => {
+        console.log('produto não encontrado')
+    })
+})
+    // Rotas Post :::::::::::::::::::::::::::
 
 app.post('/cadastrar', async (req, res, next) => {
     await User.create(req.body)
@@ -53,14 +65,14 @@ app.post('/estocar', async (req, res, next) => {
     })
 });
 
-    // Rotas Put
+    // Rotas Put :::::::::::::::::::::::::::
 
 app.put('/', (req, res, next) => {
 
     res.send('PUT')
 });
 
-    // Rotas Delete
+    // Rotas Delete :::::::::::::::::::::::::::
 
 app.delete('/', (req, res, next) => {
     res.send('DELETE')
