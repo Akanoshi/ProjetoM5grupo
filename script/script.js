@@ -15,8 +15,8 @@ async function getContent() {
     function show(data) {
         let output = ''
     
-        for(let nome of data) {
-            output += `<h1>${nome.name}</h1>`
+        for(let produto of data) {
+            output += `<h1>${produto.nome}</h1>`
     
             document.querySelector('.content').innerHTML = output
     
