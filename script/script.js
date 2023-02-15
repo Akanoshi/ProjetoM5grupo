@@ -1,24 +1,24 @@
-$('.card').owlCarousel({
-            margin:20,
-            loop:true,
-            autoplayTimeOut:2000,
-            autoplayHoverPauser:true,
-            responsive:{
-                0:{
-                    items:1,
-                    nav:false
-                },
-                500:{
-                    items:2,
-                    nav:false
-                },
-                1440:{
-                    items:3,
-                    nav:false
-                }
-            }
-        })
+async function getContent() {
+    try {
+        const response = await fetch('http://localhost:3000/produtos')
+        const data = await response.json()
 
-$('.btn').click(function(){
-    $('.menu-mobile').slideToggle('show')
-})
+        console.log(data)
+        console.log(response)
+        show(data)
+    } catch (error) {
+        console.error(error)
+    }
+}
+    getContent()
+
+    function show(data) {
+        let output = ''
+    
+        for(let nome of data) {
+            output += `<h1>${nome.name}</h1>`
+    
+            document.querySelector('.content').innerHTML = output
+    
+        }
+    }
