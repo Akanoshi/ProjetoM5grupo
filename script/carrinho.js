@@ -68,7 +68,8 @@ function addAoCarrinho(event) {
     const precoProduto = infoProdutos.getElementsByClassName("preco-produto")[0].innerText
 
     // verificação
-    // tá dando muito erro nisso, resolver depois
+    // tá dando muito erro nisso, resolver depois. serve pra não repitir o ítem e sim aumentar a quantidade se clicar de nvo em compra
+
 //     const produtoVerifica = document.getElementsByClassName("nome-produto")
 //     for (var i = 0; i < produtoVerifica.length; i++) {
 //         if (produtoVerifica[i].innerText === nomeProduto) {
