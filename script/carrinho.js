@@ -43,20 +43,23 @@ for (var i = 0; i < botaoCompra.length; i++) {
     // finalizar compra
     // VOLTAR AQUI 
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    function terminarCompra() {
+        if (valorTotal === "0,00") {
+            alert("Carrinho Vazio!")
+        } else {
+            alert(`
+            Valeu! Sua compra foi: R$${valorTotal}
+            `)
+        }
+    document.querySelector(".cart-table tbody").innerHTML = ""
+    atualizarTotal()
+    }
+
 const finalizarCompra = document.getElementsByClassName("purchase-button")
     finalizarCompra.addEventListener("click", terminarCompra)
 
-function terminarCompra() {
-    if (valorTotal === "0,00") {
-        alert("Carrinho Vazio!")
-    } else {
-        alert(`
-        Valeu! Sua compra foi: R$${valorTotal}
-        `)
-    }
-document.querySelector(".cart-table tbody").innerHTML = ""
-atualizarTotal()
-}
+
 
 // add ao carrinho
 

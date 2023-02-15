@@ -1,24 +1,12 @@
-$('.card').owlCarousel({
-            margin:20,
-            loop:true,
-            autoplayTimeOut:2000,
-            autoplayHoverPauser:true,
-            responsive:{
-                0:{
-                    items:1,
-                    nav:false
-                },
-                500:{
-                    items:2,
-                    nav:false
-                },
-                1440:{
-                    items:3,
-                    nav:false
-                }
-            }
-        })
+async function getContent() {
+    try {
+        const response = await fetch('http://localhost:3000/')
+        // const data = await response.json()
 
-$('.btn').click(function(){
-    $('.menu-mobile').slideToggle('show')
-})
+        // console.log(data)
+        console.log(response)
+    } catch (error) {
+        console.error(error)
+    }
+}
+    getContent()
