@@ -1,9 +1,17 @@
 import app from "./app.js";
 import User from "./Models/user.js";
 import Produto from "./Models/produtos.js";
-const port = 3000
 
 
+
+app.set("port", process.env.PORT || 3000)
+
+            // Rotas  :::::::::::
+    // Rotas Get :::::::::::::::::::::::::::
+
+app.get('/', (req, res) => {
+    res.sendStatus(200)
+});
 
 app.get('/produtos', async (req, res, next) => {
 
@@ -13,14 +21,25 @@ app.get('/produtos', async (req, res, next) => {
         return res.json(produtos)
     }).catch((err) => {
         return res.status(400).json({
-            erro: err,
+            erro: err.name,
             message: "falha na requisição"});
     })
 });
 
-app.post('/cadastrar', async (req, res, next) => {
-    console.log(req.body)
+app.get('/produto', async (req, res) => {
+    console.log('produto especifico')
+    
+    const prod = await Produto.findOne({ where: {nome: req.body.nome}})
+    .then((prod) => {
+        console.log('produto encontrado')
+        res.json(prod)
+    }).catch((err) => {
+        console.log('produto não encontrado')
+    })
+})
+    // Rotas Post :::::::::::::::::::::::::::
 
+app.post('/cadastrar', async (req, res, next) => {
     await User.create(req.body)
     .then(()=> {
         return res.json({
@@ -34,8 +53,6 @@ app.post('/cadastrar', async (req, res, next) => {
 });
 
 app.post('/estocar', async (req, res, next) => {
-    console.log(req.body)
-
     await Produto.create(req.body)
     .then(()=> {
         return res.json({
@@ -47,6 +64,8 @@ app.post('/estocar', async (req, res, next) => {
             message: "falha no cadastro"});
     })
 });
+
+    // Rotas Put :::::::::::::::::::::::::::
 
 app.put('/redefinirSenha', async (req, res, next) => {
     console.log('redefinição de senha');
@@ -83,7 +102,7 @@ app.delete('/deletarProduto', async (req, res, next) => {
 });
 
 
-
-app.listen(port, () => {   
-    console.log(`Listening on port ${port}`)
+        // Servidor rodando em: 
+app.listen(app.get("port"), () => {   
+    console.log(`Listening on port localhost:${app.get("port")}`)
 })

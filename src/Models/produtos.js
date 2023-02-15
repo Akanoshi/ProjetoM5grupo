@@ -21,7 +21,7 @@ const Produto = db.define("produtos" , {
         allowNull: false,
     },
     img: {
-        type: Sequelize.BLOB,
+        type: Sequelize.STRING,
         allowNull: true,
     }
 })
