@@ -68,9 +68,6 @@ app.post('/estocar', async (req, res, next) => {
 app.post('/estoque', async (req, res, next) => {
     await (req.body).forEach((el, i) => {
         Produto.create(el)
-        .then(() => {
-            res.
-        })
     })
     res.send(err)
 });
