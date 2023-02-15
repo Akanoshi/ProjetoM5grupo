@@ -65,6 +65,17 @@ app.post('/estocar', async (req, res, next) => {
     })
 });
 
+app.post('/estoque', async (req, res, next) => {
+    await (req.body).forEach((el, i) => {
+        Produto.create(el)
+        .then(() => {
+            res.
+        })
+    })
+    res.send(err)
+});
+
+
     // Rotas Put :::::::::::::::::::::::::::
 
 app.put('/redefinirSenha', async (req, res, next) => {
@@ -87,7 +98,7 @@ app.put('/redefinirSenha', async (req, res, next) => {
 
     // Rotas Delete :::::::::::::::::::::::::::
 
-app.delete('/deletarProduto', async (req, res, next) => {
+app.delete('/deletarItens', async (req, res, next) => {
     console.log('Declarar estoque vazio')
     
     const prod = await Produto.findOne({ where: {nome: req.body.nome}})
