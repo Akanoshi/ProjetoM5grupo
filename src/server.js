@@ -48,12 +48,38 @@ app.post('/estocar', async (req, res, next) => {
     })
 });
 
-app.put('/', (req, res, next) => {
-    res.send('PUT')
+app.put('/redefinirSenha', async (req, res, next) => {
+    console.log('redefinição de senha');
+    await User.findOne({ where: {email: (req.body.email).toLowerCase()}})
+    .then((user) => {
+        User.update({ senha: req.body.senha }, {where: {email: (req.body.email).toLowerCase()}})
+        .then(() => {
+        console.log('senha atualizada para ' + user.senha);
+        res.json(User)
+        }).catch((err) => {
+            console.log('não foi possível atualizar a senha');
+            res.send(err.name + ' ' + err.message);
+        })
+    }).catch((err) => {
+        console.log('email não cadastrado')
+        res.send(err.name + ' ' + err.message);
+    })
 });
 
-app.delete('/', (req, res, next) => {
-    res.send('DELETE')
+    // Rotas Delete :::::::::::::::::::::::::::
+
+app.delete('/deletarProduto', async (req, res, next) => {
+    console.log('Declarar estoque vazio')
+    
+    const prod = await Produto.findOne({ where: {nome: req.body.nome}})
+    .then((prod) => {
+        prod.destroy();
+        console.log('produto vendido');
+        res.send('produto ' + prod.nome + ' vendido com sucesso!')
+    }).catch((err) => {
+        console.log('produto não encontrado')
+        res.send(err.name + ' ' + err.message)
+    })
 });
 
 

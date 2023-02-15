@@ -12,15 +12,15 @@ const User = db.define("clientes" , {
         type: Sequelize.STRING,
         allowNull: false,
     },
-    cpf: {
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
-    cep: {
+    sobrenome: {
         type: Sequelize.STRING,
         allowNull: false,
     },
     email: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
+    senha: {
         type: Sequelize.STRING,
         allowNull: false,
     }
