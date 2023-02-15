@@ -205,7 +205,7 @@ const createClient = (client) => {
   setLocalStorage(dbClient)
 }
 const isValidFields = () => {
-  return document.getElementById('form').reportValidity()
+  return form.reportValidity()
 }
 
 // Interação com o botão
@@ -216,7 +216,7 @@ const saveClient = () => {
       name: document.getElementById('name').value,
       lastname: document.getElementById('lastname').value,
       password: document.getElementById('password').value,
-      passconfirmation: document.getElementById('passconfirmation').value,
+      passconfirmation: document.getElementById('passwordconfirmation').value,
     }
     createClient(client)
     console.log ("Cadastrado com sucesso")

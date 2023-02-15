@@ -361,6 +361,7 @@ section .container{
     outline: none!important;
     border-radius: 50%;
     border: 3px solid #B48C56!important;
+    transition: 0.6s;
 }
 .owl-dot.active{
     width: 45px;
