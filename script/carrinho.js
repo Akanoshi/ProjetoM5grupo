@@ -1,9 +1,16 @@
 // funções para mostrar e ocultar o carrinhoo
+<<<<<<< HEAD
 
 function mostrarCarrinho() {
     let carrinho = document.querySelector('#carrinho')
     carrinho.style.display= 'block';
 
+=======
+console.log(document.getElementsByClassName("button-hover-background").length)
+function mostrarCarrinho() {
+    let carrinho = document.querySelector('#carrinho')
+    carrinho.style.display = 'block';
+>>>>>>> 15fc8e8b86a398d8e0dd60d306d636a6803926b8
 } 
 
 function esconderCarrinho() {
@@ -35,10 +42,19 @@ function checarVazio(event) {
     }
 }
     // botao de adcionar item
+<<<<<<< HEAD
 const botaoCompra = document.getElementsByClassName("button-hover-background")
 for (var i = 0; i < botaoCompra.length; i++) {
     botaoCompra[i].addEventListener("click", addAoCarrinho)
 }
+=======
+/* const botaoCompra = document.getElementsByClassName("button-hover-background")
+console.log(botaoCompra)
+for (var i = 0; i < botaoCompra.length; i++) {
+    botaoCompra[i].addEventListener("click", addAoCarrinho)
+} */
+
+>>>>>>> 15fc8e8b86a398d8e0dd60d306d636a6803926b8
 
     // finalizar compra
     // VOLTAR AQUI 
@@ -106,6 +122,13 @@ function addAoCarrinho(event) {
     novoProduto.getElementsByClassName("product-qtd-input")[0].addEventListener("change", atualizarTotal)
     novoProduto.getElementsByClassName("remove-product-button")[0].addEventListener("click", removerProd)
     
+<<<<<<< HEAD
+=======
+
+    if (carrinho.style.display != 'block') {
+        carrinho.style.display = 'block';
+    }
+>>>>>>> 15fc8e8b86a398d8e0dd60d306d636a6803926b8
 }
 
 // atualizar preço
@@ -124,3 +147,11 @@ valorTotal = valorTotal.replace(".",",")
 document.querySelector(".cart-total-container span").innerText = "R$" + valorTotal
 }
 
+<<<<<<< HEAD
+=======
+        // Concluindo compra e excluindo no banco de dados
+
+    function concluirCompra() {
+        alert("clica aqui não!")
+    }
+>>>>>>> 15fc8e8b86a398d8e0dd60d306d636a6803926b8
