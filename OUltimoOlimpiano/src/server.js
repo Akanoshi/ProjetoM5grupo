@@ -66,10 +66,13 @@ app.post('/estocar', async (req, res, next) => {
 });
 
 app.post('/estoque', async (req, res, next) => {
+    let count = 0
     await (req.body).forEach((el, i) => {
-        Produto.create(el)
+        Produto.create(req.body[i])
+            console.log(req.body[i])
+            count += 1;
     })
-    res.send(err)
+    res.send(`${count} produtos estocados com sucesso`)
 });
 
 
