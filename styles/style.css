@@ -44,8 +44,6 @@ header .menu ul li a {
     color: #B48C56;
     transition: all 0.3s;
 }
-<<<<<<< HEAD
-=======
 
 header .menu ul button {
     text-decoration: none;
@@ -65,7 +63,6 @@ header .menu ul button:hover {
 
 }
 
->>>>>>> 15fc8e8b86a398d8e0dd60d306d636a6803926b8
 header .menu ul li a:hover{
     color: #F2D2A3;
     text-decoration: underline;
@@ -85,11 +82,7 @@ section .container{
 }
 /*      HOME       */
 #home .container{
-<<<<<<< HEAD
-    background: url(image/bg1.png) no-repeat;
-=======
     background: url(../imgArtefatos/Excalibur.jpg) no-repeat;
->>>>>>> 15fc8e8b86a398d8e0dd60d306d636a6803926b8
     background-size: cover;
 }
 #home .container .content{
@@ -242,13 +235,8 @@ section .container{
 /*      about       */
 
 #about .container{
-<<<<<<< HEAD
-    background: url(image/bg2.png) no-repeat;
-    background-size: 100% 100%;
-=======
     background: url(../imgArtefatos/mijolnir.jpg) no-repeat;
     background-size: 50% 100%;
->>>>>>> 15fc8e8b86a398d8e0dd60d306d636a6803926b8
 }
 #about .container .title{
     width: 70%;
@@ -402,19 +390,11 @@ section .container{
 /*      team       */
 
 #team .container{
-<<<<<<< HEAD
-    background: url(image/bg4.png) no-repeat;
-    background-size: 100% 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-=======
     background: url(../imgArtefatos/asasicaro.jpg) no-repeat;
     background-size: 50% 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
->>>>>>> 15fc8e8b86a398d8e0dd60d306d636a6803926b8
     padding: 0 50px;
 }
 #team .container .content{
@@ -568,21 +548,14 @@ section .container{
     flex-direction: column;
 }
 #footer .container .content{
-<<<<<<< HEAD
-    width: 90%;
-=======
     width: 70%;
->>>>>>> 15fc8e8b86a398d8e0dd60d306d636a6803926b8
     height: 40vh;
     background:#F2D2A3 ;
     display: flex;
     align-items: center;
     justify-content: space-between;
-<<<<<<< HEAD
-=======
     position: absolute;
     margin-top: 30% ;
->>>>>>> 15fc8e8b86a398d8e0dd60d306d636a6803926b8
 }
 #footer .container .content .left{
     width: 40%;
@@ -627,11 +600,7 @@ section .container{
     height: 20vh;
     display: flex;
     justify-content: space-evenly;
-<<<<<<< HEAD
-    margin-top: 60px;
-=======
     margin-top: 30px;
->>>>>>> 15fc8e8b86a398d8e0dd60d306d636a6803926b8
 }
 #footer .container .info .box{
     display: flex;

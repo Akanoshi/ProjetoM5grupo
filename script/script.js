@@ -1,27 +1,3 @@
-<<<<<<< HEAD
-async function getContent() {
-    try {
-        const response = await fetch('http://localhost:3000/produtos')
-        const data = await response.json()
-
-        console.log(data)
-        console.log(response)
-        show(data)
-    } catch (error) {
-        console.error(error)
-    }
-}
-    getContent()
-
-    function show(data) {
-        let output = ''
-    
-        for(let produto of data) {
-            output += `<h1>${produto.nome}</h1>`
-    
-            document.querySelector('.content').innerHTML = output
-    
-=======
 /*     function getContent() {
         fetch('http://localhost:3000/produtos').then((resp) => {
   
@@ -98,6 +74,5 @@ async function getContent() {
         console.log(botaoCompra)
         for (var i = 0; i < botaoCompra.length; i++) {
             botaoCompra[i].addEventListener("click", addAoCarrinho)
->>>>>>> 15fc8e8b86a398d8e0dd60d306d636a6803926b8
         }
     }

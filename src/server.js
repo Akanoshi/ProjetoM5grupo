@@ -66,12 +66,6 @@ app.post('/estocar', async (req, res, next) => {
 });
 
 app.post('/estoque', async (req, res, next) => {
-<<<<<<< HEAD
-    await (req.body).forEach((el, i) => {
-        Produto.create(el)
-    })
-    res.send(err)
-=======
     let count = 0
     await (req.body).forEach((el, i) => {
         Produto.create(req.body[i])
@@ -79,7 +73,6 @@ app.post('/estoque', async (req, res, next) => {
             count += 1;
     })
     res.send(`${count} produtos estocados com sucesso`)
->>>>>>> 15fc8e8b86a398d8e0dd60d306d636a6803926b8
 });
 
 
