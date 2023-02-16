@@ -1,4 +1,4 @@
-    function getContent() {
+/*     function getContent() {
         fetch('http://localhost:3000/produtos').then((resp) => {
   
         return resp.json()
@@ -10,7 +10,7 @@
     console.log(arrayy)
         })
     }
-
+ */
     async function getContent() {
         try {
             const response = await fetch('http://localhost:3000/produtos')
@@ -69,5 +69,10 @@
 
             }
 
+        }
+        const botaoCompra = document.getElementsByClassName("button-hover-background")
+        console.log(botaoCompra)
+        for (var i = 0; i < botaoCompra.length; i++) {
+            botaoCompra[i].addEventListener("click", addAoCarrinho)
         }
     }
