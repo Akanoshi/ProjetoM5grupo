@@ -34,11 +34,11 @@ function checarVazio(event) {
     }
 }
     // botao de adcionar item
-/* const botaoCompra = document.getElementsByClassName("button-hover-background")
+ const botaoCompra = document.getElementsByClassName("button-hover-background")
 console.log(botaoCompra)
 for (var i = 0; i < botaoCompra.length; i++) {
     botaoCompra[i].addEventListener("click", addAoCarrinho)
-} */
+} 
 
 
     // finalizar compra
@@ -89,7 +89,7 @@ function addAoCarrinho(event) {
    `
         <td class="product-identification">
             <img src=${imgProduto} class="img-produto">
-            <strong class="cart-product-title" class="nome-produto">${nomeProduto}</strong>
+            <strong id="name" class="cart-product-title" class="nome-produto">${nomeProduto}</strong>
         </td>
         <td>
             <span class="cart-product-price" class="preco-produto">${precoProduto}</span>
@@ -129,8 +129,42 @@ valorTotal = valorTotal.replace(".",",")
 document.querySelector(".cart-total-container span").innerText = "R$" + valorTotal
 }
 
+        // função delete
+
+        function deletar(url, body) {
+            console.log(body)
+            let request = new XMLHttpRequest();
+            request.open('DELETE', url, true);
+            request.setRequestHeader('Content-Type', 'application/json')
+            request.send(JSON.stringify(body));
+        
+            request.onload = function () {
+                console.log(this.responseText)
+            }
+            console.log('item comprado!')
+            return request.responseText;
+        }
+        
+        function deletarItens() {
+            const nome = document.getElementById('name').innerText;
+            let url = "http://localhost:3000/deletarItens" 
+             const body = {
+                "nome": nome
+             }
+        
+             deletar(url, body)
+        }
+        
+        
+        document.getElementById('concluir').addEventListener("onclick", deletarItens())
+
+
         // Concluindo compra e excluindo no banco de dados
 
     function concluirCompra() {
-        alert("clica aqui não!")
-    }
+
+        deletarItens()
+
+        // para fechar o carrinho após a compra
+        esconderCarrinho()
+}
