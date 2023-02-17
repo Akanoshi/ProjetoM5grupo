@@ -82,7 +82,7 @@ section .container{
 }
 /*      HOME       */
 #home .container{
-    background: url(../imgArtefatos/Excalibur.jpg) no-repeat;
+    background: url(../imgArtefatos/Excalibur.png) no-repeat;
     background-size: cover;
 }
 #home .container .content{
@@ -390,7 +390,7 @@ section .container{
 /*      team       */
 
 #team .container{
-    background: url(../imgArtefatos/asasicaro.jpg) no-repeat;
+    background: url(../imgArtefatos/asasicaro.png) no-repeat;
     background-size: 50% 100%;
     display: flex;
     align-items: center;
