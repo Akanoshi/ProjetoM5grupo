@@ -1,5 +1,5 @@
 # ProjetoM5grupo
-Projeto em grupo API CRUD módulo 5
+Projeto em grupo API CRUD módulo 5 ..
 
 # Sobre o projeto
 Consiste em um site de vendas de produtos cadastrados em um banco de dados e uma página de cadastro que cria usuários no banco de dados.

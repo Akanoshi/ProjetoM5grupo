@@ -24,7 +24,9 @@ header{
 }
 header .logo img{
     width: 120px;
-    margin: 0 60px;
+    height: 80px;
+    margin-left: 60px;
+    margin-top: 10px;
 }
 header .menu{
     display: flex;
@@ -82,7 +84,7 @@ section .container{
 }
 /*      HOME       */
 #home .container{
-    background: url(../imgArtefatos/Excalibur.jpg) no-repeat;
+    background: url(../imgArtefatos/Excalibur.png) no-repeat;
     background-size: cover;
 }
 #home .container .content{
@@ -196,6 +198,7 @@ section .container{
 }
 #branch .container .box img{
     width: 120px;
+    height: 150px;
 }
 #branch .container .box h1{
     font-size: 2rem;
@@ -237,6 +240,7 @@ section .container{
 #about .container{
     background: url(../imgArtefatos/mijolnir.jpg) no-repeat;
     background-size: 50% 100%;
+    margin-top: 150px;
 }
 #about .container .title{
     width: 70%;
@@ -390,7 +394,7 @@ section .container{
 /*      team       */
 
 #team .container{
-    background: url(../imgArtefatos/asasicaro.jpg) no-repeat;
+    background: url(../imgArtefatos/asasicaro.png) no-repeat;
     background-size: 50% 100%;
     display: flex;
     align-items: center;
@@ -542,6 +546,8 @@ section .container{
 #footer .container{
     background: url(image/bg3.png) no-repeat;
     background-size: 100% 100%;
+    margin-top: 15%;
+    margin-bottom: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -549,7 +555,7 @@ section .container{
 }
 #footer .container .content{
     width: 70%;
-    height: 40vh;
+    height: 45vh;
     background:#F2D2A3 ;
     display: flex;
     align-items: center;
@@ -1100,4 +1106,21 @@ section .container{
         margin-top: -20px;
         font-size: 0.7rem;
     }
+}
+
+
+
+#produtoPromocao {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.nome-produto {
+    width: 250px;
+    height: 150px;
+    display: block;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.box {
+    
 }

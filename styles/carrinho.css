@@ -6,10 +6,14 @@
     width: 40%;
     bottom: 20px;
     right: 20px;
-    background-color: transparent;
+    background-color: rgba(48, 39, 37, 0.9);
+    border: 4px solid rgb(0, 0, 0, 0.45);
+    border-radius: 15px;
 }
-
-.img-produto {
+#carrinho .img-produto {
     height: 50%;
     width: 50%;
+}
+#carrinho th {
+    color: white;
 }
